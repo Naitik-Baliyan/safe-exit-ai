@@ -1,6 +1,11 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from .simulation import simulate_crowd_data
+import os
+import sys
+
+# Add current directory to path for Vercel
+sys.path.append(os.path.dirname(__file__))
+from simulation import simulate_crowd_data
 
 # Initialize FastAPI app
 app = FastAPI(
@@ -18,15 +23,17 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/api")
 @app.get("/")
 async def root():
     """Welcome endpoint for the API."""
     return {
+        "status": "online",
         "message": "Welcome to SafeExit AI API.",
-        "features": "Time-based simulation enabled. Zone B will experience a surge over multiple requests.",
-        "how_to_test": "Refresh /crowd-data multiple times to observe the surge in Zone B."
+        "environment": "Vercel Serverless"
     }
 
+@app.get("/api/crowd-data")
 @app.get("/crowd-data")
 async def get_crowd_data():
     """

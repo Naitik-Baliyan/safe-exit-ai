@@ -171,9 +171,9 @@ export default function StadiumDashboard() {
 
             <div className="flex items-center gap-6">
                <div className="text-right hidden sm:block space-y-1">
-                  <div className="text-sm font-black text-white uppercase italic tracking-tighter tracking-widest">{isUsingFallback ? 'MOCK VIEW' : 'COMMAND CTR'}</div>
+                  <div className="text-sm font-black text-white uppercase italic tracking-tighter tracking-widest">{isUsingFallback ? 'MOCK VIEW' : 'CLOUD CTR'}</div>
                   <div className="text-[9px] font-bold text-indigo-400/40 uppercase tracking-[.4em]">
-                    {isUsingFallback ? 'LINK DISCONNECTED' : 'ENCRYPTED UPLINK'}
+                    {isUsingFallback ? 'UPLINK OFFLINE' : 'CLOUD UPLINK'}
                   </div>
                </div>
                <div className="w-14 h-14 rounded-3xl bg-gradient-to-tr from-indigo-600 to-violet-600 p-0.5 shadow-xl shadow-indigo-500/20">
@@ -198,9 +198,9 @@ export default function StadiumDashboard() {
                  <AlertTriangle className="text-amber-500" size={24} />
               </div>
               <div className="flex-1">
-                 <div className="text-sm font-black text-white uppercase tracking-[.3em] mb-1">Local Simulation Environment</div>
+                 <div className="text-sm font-black text-white uppercase tracking-[.3em] mb-1">AI Engine: Simulation Mode</div>
                  <p className="text-[11px] text-white/40 font-bold uppercase tracking-widest leading-relaxed">
-                    Uplink to FastAPI backend at port 8000 failed. Running recursive synthetic data loop.
+                    Cloud Uplink failed. Running recursive synthetic data loop.
                  </p>
               </div>
               <button 
