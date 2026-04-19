@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from simulation import simulate_crowd_data
+from .simulation import simulate_crowd_data
 
 # Initialize FastAPI app
 app = FastAPI(

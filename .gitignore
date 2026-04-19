@@ -1,32 +1,41 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-.venv/
-venv/
-ENV/
-.env
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# Node
-node_modules/
-.next/
-out/
-build/
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# OS
-.DS_Store
-Thumbs.db
+# env files (can opt-in for committing if needed)
+.env*
 
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
+# vercel
+.vercel
 
-# GCP/Environment
-.gcloud/
-auth-key.json
+# typescript
+*.tsbuildinfo
+next-env.d.ts

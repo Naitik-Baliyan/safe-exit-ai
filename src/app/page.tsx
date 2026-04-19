@@ -75,7 +75,7 @@ export default function StadiumDashboard() {
 
   const fetchData = async () => {
     try {
-      const res = await fetch("http://127.0.0.1:8000/crowd-data");
+      const res = await fetch("/api/crowd-data");
       if (!res.ok) throw new Error("Backend unreachable");
       const data = await res.json();
       setZones(data);

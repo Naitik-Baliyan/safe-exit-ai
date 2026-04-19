@@ -35,16 +35,12 @@
 
 ```bash
 Safe-exit/
-├── frontend/               # Next.js 14 Web Application
-│   ├── src/
-│   │   ├── components/     # Modular UI Components
-│   │   ├── types.ts        # Shared TypeScript Interfaces
-│   │   └── app/            # App Router & Styles
-│   └── Dockerfile          # Container config for Web
-├── main.py                 # FastAPI Entry Point
-├── simulation.py           # Core AI Simulation Logic
-├── requirements.txt        # Backend Dependencies
-├── Dockerfile              # Container config for API
+├── src/                    # Next.js 14 Web Application
+├── api/                    # FastAPI Backend (Vercel Functions)
+│   ├── index.py           # API Entry Point
+│   ├── simulation.py      # Core AI Simulation Logic
+│   └── requirements.txt   # Backend Dependencies
+├── vercel.json             # Vercel Configuration
 └── README.md               # Master Documentation
 ```
 
@@ -52,41 +48,32 @@ Safe-exit/
 
 ## 🚦 Getting Started
 
-### 1. Backend Setup
+### 1. Install dependencies
 ```bash
-# Install dependencies
-pip install -r requirements.txt
-
-# Start the server
-python main.py
+npm install
 ```
 
-### 2. Frontend Setup
+### 2. Start Development
+You need to start both the frontend and the backend for local development (or use `vercel dev`):
 ```bash
-cd frontend
-
-# Install dependencies
-npm install
-
-# Start the developer dashboard
+# Terminal 1: Frontend
 npm run dev
+
+# Terminal 2: Backend
+npm run dev:backend
 ```
 
 ---
 
 ## ☁️ Deployment
 
-This project is architected for **Google Cloud Platform (GCP)**. It uses **Cloud Run** for serverless, zero-maintenance hosting.
+This project is optimized for **Vercel**.
 
-### Quick Deploy (GCP CLI)
-```bash
-# Deploy Backend
-gcloud run deploy safe-exit-api --source .
-
-# Deploy Frontend
-cd frontend
-gcloud run deploy safe-exit-web --source .
-```
+### Standard Deploy
+1. Push your code to a GitHub repository.
+2. Import the project into **Vercel**.
+3. Vercel will automatically detect Next.js and the `api/` folder.
+4. It will "just work."
 
 ---
 
